@@ -1,0 +1,154 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-xl {
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Main Product Page Container */
+.product-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+/* Left Section: Text */
+.left-section {
+    flex-basis: 50%;
+    padding-right: 30px;
+}
+
+.product-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.product-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.commander-btn {
+    background-color: #0FBA09;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.commander-btn:hover {
+    background-color: #0a7c06;
+}
+
+.commander-btn a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Right Section: Image */
+.right-section {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Full Width Div Section */
+.animated-section {
+    width: 100vw;
+    background-color: #0FBA09;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.animated-image {
+    position: absolute;
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    animation: moveImage 10s linear infinite; /* Smooth infinite animation */
+}
+
+/* Animation Keyframes */
+@keyframes moveImage {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: calc(100% - 100px); /* Ensures it moves to the right end */
+    }
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .product-page {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .left-section {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .product-title {
+        font-size: 2rem;
+    }
+
+    .product-description {
+        font-size: 1rem;
+    }
+
+    .product-image {
+        width: 80%;
+    }
+
+    /* Adjust animated image size for smaller screens */
+    .animated-image {
+        width: 130px; /* Reduce image size on mobile */
+    }
+
+    @keyframes moveImage {
+        0% {
+            left: 0;
+        }
+        100% {
+            left: calc(100% - 80px); /* Move it according to reduced size */
+        }
+    }
+}
